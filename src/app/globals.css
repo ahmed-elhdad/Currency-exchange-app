@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Kumbh+Sans:wght@100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* Main variables */
+
+.flex{
+    display: flex;
+}
+.flex-col{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.flex-nowrap{
+    flex-wrap: nowrap;
+}
+.flex-row-reverse{
+    flex-direction: row-reverse;
+}
+.flex-col-reverse{
+    flex-direction: column-reverse;
+}
+.items-start{
+    align-items: flex-start;
+}
+.items-end{
+    align-items: flex-end;
+}
+.items-center{
+    align-items: center;
+}
+.items-baseline{
+    align-items: baseline;
+}
+.justify-start{
+    justify-content: flex-start;
+}
+.justify-end{
+    justify-content: flex-end;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.justify-around{
+    justify-content: space-around;
+}
+.justify-evenly{
+    justify-content: space-evenly;
+}
+
+/* End main variables */
+
+.tajawal-extralight {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.tajawal-light {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.tajawal-regular {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tajawal-medium {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.tajawal-bold {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tajawal-extrabold {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.tajawal-black {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color:  #010723;
+}

@@ -1,0 +1,137 @@
+div.inupts{
+    flex-direction: column;
+    gap: 10px;
+    background-color: #FFFF;
+    width: 1000px;
+    height: 300px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    h2{
+        position: relative;
+        top: -50px;
+        font-size: 30px;
+    }
+    .inputs{
+        gap: 17px;
+        .amount{
+            label{
+                position: absolute;
+                top: 14%;
+                left: 10%;
+            }
+            div.main{
+                span {
+                    font-size: 1.7rem;
+                    font-weight: bold;
+                    position: absolute;
+                    left: 38%;
+                    top: 51.3%;
+                }
+            }
+        }
+        
+        .change {
+            flex-direction: row;
+            gap: 10px;
+            .from{
+                label{
+                    top: 9px;
+                    left: 18px;
+                }
+            }
+            .from div.select,
+            .to div.select {
+                
+            }
+            button{
+                width: 50px;
+                height: 50px;
+                border: 1px solid #c0c0c0;
+                background-color: #FFFF;
+                cursor: pointer;
+                position: absolute;
+                z-index: 6;
+                svg{
+                    width: 50px;
+                    width: 50px;
+                }
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+    }
+}
+label{
+    position: absolute;
+    color: var(--Label-color);
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+.amount .input,
+.amount .main,
+.from .input,
+.from .select,
+.to .select,
+.to .input{    
+    width: 300px;
+    height: 80px;       
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;                
+    &:hover,
+    &:focus{
+        z-index: 10;
+    }
+}
+.amount input,
+.from .input input,
+.to .input input {
+    width: 100% !important;
+    height: 100% !important;
+    border: 2px solid #c0c0c0;
+    font-size: 17px;
+    letter-spacing: 1px;
+    padding: 5px;
+    &:hover{
+        background-color: var(--inputs-hover-bg);
+    }
+    &:focus{
+        outline: none;
+        border: 2px solid var(--Button-color);
+    }
+    &:invalid{
+        border: 1px solid var(--Error-color);
+    }
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.from div.input,
+.to div.input{
+    position: absolute;
+
+}
+}
+
+.high-index{
+    z-index: 5;
+}
+.d-none{
+    visibility: hidden;
+}
+ul{
+    position: relative;
+    top: 90px;
+}
+.input{
+    position: absolute;
+}
