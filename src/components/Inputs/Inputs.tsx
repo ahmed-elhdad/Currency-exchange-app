@@ -9,10 +9,12 @@ const Inputs = () => {
     const flagsAPI = "https://restcountries.com/v3.1/all";
     const currencyAPI = "https://gist.githubusercontent.com/ksafranski/2973986/raw/Common-Currency.json";
     const [amountIcon, setAmountIcon] = useState([]);
+    const [currencyName, setCurrencyName] = useState([]);
     const [FIcon, setFIcon] = useState<{ flags: { svg: string } }[]>([]);
-    const [FSymbol, setFSymbol] = useState([]);
+    const [FSymbol, setFSymbol] = useState<string[]>([]);
     const [TIcon, setTIcon] = useState<any>([]);
-    const amountRef = useRef<HTMLInputElement>(null)
+    const amountRef = useRef<HTMLInputElement>(null);
+    const [money, setMoney] = useState<any>(null);
     async function fetchFlagsApi() {
         fetch(flagsAPI)
         .then((response) => {
@@ -22,6 +24,8 @@ const Inputs = () => {
         .then((data) => {
             for (let i = 0; i < data.length; i++) {
                 setFIcon((prev) => [...prev, { flags: { svg: data[i].flags.svg } }]);
+                setCurrencyName((prev) => [...prev, data[i].name.common]);
+                setAmountIcon((prev) => [...prev, data[i].currencies]);
             }
             
         })
@@ -36,7 +40,7 @@ const Inputs = () => {
             for (let i = 0; i < data.length; i++) {
                 console.log(data[i]);
                 
-                setFSymbol(data[i])
+                setFSymbol((prev) => [...prev, data[i]])
             }
         })
         .catch((err) => console.log(err))
@@ -51,10 +55,19 @@ const Inputs = () => {
             <div className="inputs flex justify-center items-center">
                 <div className="amount flex justify-center items-center border inputs-rad">
                     <div className="main">
+                        
                     </div>
                     <div className="input">
                         <label htmlFor="amountInput">المبلغ</label>
-                        <input type="text" name='amountInput' />
+                        <input type="text" ref={amountRef} name='amountInput'
+                        placeholder='المبلغ المراد تحويله'
+                        onChange={(e) => { 
+                            setMoney(e.target.value);
+                            console.log(money);
+                            
+                            }
+                        }
+                        />
                     </div>
                 </div>
                 <div className="change flex justify-center items-center">
@@ -72,12 +85,11 @@ const Inputs = () => {
                                 }
                             <div/>
                         </div>
-                            <div className="symbol">
-                                {/* ADD SYMBOL */}
-                                {FSymbol.map((symb, index) => (
-                                    <span key={index}>{symb}</span>
+                            <div className="name tajawal-500">
+                                {/* ADD NAME */}
+                                {currencyName.map((name, index) => (
+                                    <span key={index}>{name}</span>
                                 ))}
-
                             </div>
                         </div>
                     </div>
@@ -107,6 +119,7 @@ const Inputs = () => {
                     </div>
                 </div>
             </div>
+            <a href="../Header/Header.scss" download>click to download</a>
             <button type='button'>تحويل</button>
         </div>
     )
